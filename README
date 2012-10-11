@@ -1,10 +1,13 @@
-What I've done here:
+How to make markov models of Killian's tweets:
 
-Get most of Killian's tweets with scrape_twitter.py
-(not sure how "paging" works. Asking for 1000 tweets seems to get "about 170". Asking for page 2 seems to start at about 200. So I tried to ask for 1000 tweets 10 times, and I got about 1560, which had some duplicates.)
-Pipe them through sort and uniq to get down to about 1363 unique tweets.
+1. install python-twitter https://code.google.com/p/python-twitter/
+(including the deps http://pypi.python.org/pypi/simplejson and https://code.google.com/p/httplib2/ ... you can skip the oauth library, because it never logs in)
 
-Create a markov model of her tweets.
-Output a few good ones.
-Post to twitter manually.
+2. ./scrape_twitter.py | sort | uniq > tweets.txt
+(this gets some portion of the most recent 200 tweets. not sure how "paging" works. Asking for 1000 tweets seems to get about 170, depending on how Twitter's feeling. Asking for page 2 seems to start at about #200. So I tried to ask for 200 tweets 10 times, and I got about 1560. Some of these were duplicates though, hence the sort and uniq)
+
+3. ./markov.py
+(this builds a bigram Markov chain model from the tweets, then prints 10 random tweets.)
+
+4. Pick your favorites, maybe cut them down to 140 characters, and post to twitter manually.
 
