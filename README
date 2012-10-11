@@ -6,5 +6,5 @@ Pipe them through sort and uniq to get down to about 1363 unique tweets.
 
 Create a markov model of her tweets.
 Output a few good ones.
-Post to twitter.
+Post to twitter manually.
 
