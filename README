@@ -1,0 +1,10 @@
+What I've done here:
+
+Get most of Killian's tweets with scrape_twitter.py
+(not sure how "paging" works. Asking for 1000 tweets seems to get "about 170". Asking for page 2 seems to start at about 200. So I tried to ask for 1000 tweets 10 times, and I got about 1560, which had some duplicates.)
+Pipe them through sort and uniq to get down to about 1363 unique tweets.
+
+Create a markov model of her tweets.
+Output a few good ones.
+Post to twitter.
+
